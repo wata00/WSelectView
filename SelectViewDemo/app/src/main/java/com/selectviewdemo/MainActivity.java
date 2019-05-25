@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         SelectViewItem selectViewItem2 = new SelectViewItem(3,"c");
         SelectViewItem selectViewItem3 = new SelectViewItem(4,"d");
         SelectViewItem selectViewItem4 = new SelectViewItem(5,"e");
+        SelectViewItem selectViewItem5 = new SelectViewItem(6,"f");
         List<SelectViewItem> items = new ArrayList<>();
         items.add(selectViewItem);
         items.add(selectViewItem1);
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         items1.add(selectViewItem2);
         items1.add(selectViewItem3);
         items1.add(selectViewItem4);
+        items1.add(selectViewItem5);
         SelectViewData selectViewData7 = new SelectViewData<>(items1, false, 2);
         mList.add(selectViewData);
         mList.add(selectViewData1);

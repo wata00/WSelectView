@@ -18,37 +18,14 @@ import java.util.List;
  */
 final class Utils {
     /**
-     * dip转px
-     *
-     * @param context context
-     * @param dp      dp
-     * @return px
-     */
-    public static int dp2px(Context context, float dp) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dp * scale + 0.5f);
-    }
-
-    /**
      * 获取屏幕宽度
      *
      * @param context context
      * @return 屏幕宽度(px)
      */
-    public static int getScreenWidth(Context context) {
+    static int getScreenWidth(Context context) {
         DisplayMetrics dm = context.getResources().getDisplayMetrics();
         return dm.widthPixels;
-    }
-
-    /**
-     * 获取屏幕高度
-     *
-     * @param context context
-     * @return 屏幕高度(px)
-     */
-    public static int getScreenHeight(Context context) {
-        DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        return dm.heightPixels;
     }
 
     /**
@@ -60,7 +37,7 @@ final class Utils {
      * @throws IOException io异常
      * @throws ClassNotFoundException 类型转化异常
      */
-    public static <T> List<T> deepCopy(List<T> src) throws IOException, ClassNotFoundException {
+    static <T> List<T> deepCopy(List<T> src) throws IOException, ClassNotFoundException {
         ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
         ObjectOutputStream out = new ObjectOutputStream(byteOut);
         out.writeObject(src);
