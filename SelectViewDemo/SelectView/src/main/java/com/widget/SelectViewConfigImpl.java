@@ -10,11 +10,6 @@ import com.selectview.R;
  */
 public class SelectViewConfigImpl implements SelectViewConfig {
     @Override
-    public int contentHeight() {
-        return 710;
-    }
-
-    @Override
     public int titleStyle() {
         return R.layout.select_view_item_linear;
     }

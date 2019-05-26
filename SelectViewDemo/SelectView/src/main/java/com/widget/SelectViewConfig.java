@@ -10,13 +10,6 @@ import android.support.annotation.LayoutRes;
  */
 public interface SelectViewConfig {
     /**
-     * 内容高度
-     *
-     * @return int高度
-     */
-    int contentHeight();
-
-    /**
      * 标题样式
      *
      * @return int资源文件

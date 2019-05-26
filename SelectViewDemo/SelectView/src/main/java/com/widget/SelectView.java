@@ -10,7 +10,6 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import com.selectview.R;
 
@@ -139,7 +138,6 @@ public class SelectView extends FrameLayout {
      * 初始化recyclerView
      */
     private void initRecyclerView() {
-        fitScreen();
         mAdapter = new SelectViewAdapter();
         mAdapter.setSelectViewConfig(getSelectConfig());
         mRecyclerView.setAdapter(mAdapter);
@@ -165,17 +163,6 @@ public class SelectView extends FrameLayout {
             }
         });
         mRecyclerView.setLayoutManager(manager);
-    }
-
-    /**
-     * 屏幕适配
-     */
-    private void fitScreen() {
-        int height = getSelectConfig().contentHeight();
-        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mRecyclerView.getLayoutParams();
-        lp.width = Utils.getScreenWidth(mContext);
-        lp.height = height;
-        mRecyclerView.setLayoutParams(lp);
     }
 
     /**
