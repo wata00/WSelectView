@@ -72,6 +72,7 @@ mSelectView.setSelectConfig(new SelectViewConfig() {
 ```
 
 支持配置项:
+|--|--|
 |配置项|默认值|
 |标题布局资源文件|@LayoutRes layout.select_view_item_linear|
 |条目布局资源文件|@LayoutRes layout.select_view_item_grid|
@@ -161,6 +162,7 @@ mSelectView.reset();
 
 - API
 
+|--|--|
 |api|功能|
 |setSelectConfig(SelectViewConfig config)|设置配置项|
 |setData(@NonNull List<SelectViewData> list)|设置数据|
