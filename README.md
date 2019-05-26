@@ -72,12 +72,13 @@ mSelectView.setSelectConfig(new SelectViewConfig() {
 ```
 
 支持配置项:
-|--|--|
-|配置项|默认值|
-|标题布局资源文件|@LayoutRes layout.select_view_item_linear|
-|条目布局资源文件|@LayoutRes layout.select_view_item_grid|
-|条目单行列数|int 3|
-|是否为全局单选|boolean false|
+
+| 配置项           | 默认值                                    |
+| ---------------- | ----------------------------------------- |
+| 标题布局资源文件 | @LayoutRes layout.select_view_item_linear |
+| 条目布局资源文件 | @LayoutRes layout.select_view_item_grid   |
+| 条目单行列数     | int 3                                     |
+| 是否为全局单选   | boolean false                             |
 
 (2)设置数据
 
@@ -162,11 +163,11 @@ mSelectView.reset();
 
 - API
 
-|--|--|
-|api|功能|
-|setSelectConfig(SelectViewConfig config)|设置配置项|
-|setData(@NonNull List<SelectViewData> list)|设置数据|
-|setDataDelegation(SelectViewAdapter.DataDelegation delegation)|视图填充|
-|setOnItemClickListener(SelectViewAdapter.OnItemClickListener listener)|单选监听|
-|getSelectList()|当前所选择的全部条目|
-|reset()|重置回初始值|
+| api                                                                    | 功能                 |
+| ---------------------------------------------------------------------- | -------------------- |
+| setSelectConfig(SelectViewConfig config)                               | 设置配置项           |
+| setData(@NonNull List<SelectViewData> list)                            | 设置数据             |
+| setDataDelegation(SelectViewAdapter.DataDelegation delegation)         | 视图填充             |
+| setOnItemClickListener(SelectViewAdapter.OnItemClickListener listener) | 单选监听             |
+| getSelectList()                                                        | 当前所选择的全部条目 |
+| reset()                                                                | 重置回初始值         |
