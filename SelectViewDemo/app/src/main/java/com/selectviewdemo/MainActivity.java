@@ -39,13 +39,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean selectViewSingle = item.isSelectViewSingle();
                 if (item.isSelectViewCheck()){
                     if (selectViewSingle){
-                        viewById.setBackgroundResource(R.drawable.select_view_sp_r20_ff8384);
+                        viewById.setBackgroundResource(R.drawable.select_view_sp_r18_f83244);
+                        viewById.setTextColor(Color.parseColor("#ffffff"));
                     }else {
-                        viewById.setBackgroundResource(R.drawable.select_view_sp_r20_st_ff8384);
+                        viewById.setBackgroundResource(R.drawable.select_view_sp_r18_st_f83244);
+                        viewById.setTextColor(Color.parseColor("#f83244"));
                     }
-                    viewById.setTextColor(Color.RED);
                 }else {
-                    viewById.setBackgroundResource(R.drawable.select_view_sp_r20_f5f5f5);
+                    viewById.setBackgroundResource(R.drawable.select_view_sp_r18_f6f6f7);
                     viewById.setTextColor(Color.parseColor("#333333"));
                 }
                 viewById.setText(item.getSelectViewTitle());
