@@ -9,8 +9,6 @@ import java.io.Serializable;
  * @date 2019/5/25
  */
 public class SelectViewItem implements Serializable {
-    private static final long serialVersionUID = 211459722873093506L;
-
     /**
      * 唯一标识id
      */
@@ -36,7 +34,11 @@ public class SelectViewItem implements Serializable {
      */
     private String selectViewTitle;
 
-    public SelectViewItem(long id,String selectViewTitle) {
+    public SelectViewItem() {
+
+    }
+
+    public SelectViewItem(long id, String selectViewTitle) {
         this.selectViewTitle = selectViewTitle;
         this.id = id;
     }
