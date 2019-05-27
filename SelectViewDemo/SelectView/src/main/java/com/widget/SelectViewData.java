@@ -9,7 +9,7 @@ import java.util.List;
  * @date 2019/5/25
  */
 public class SelectViewData<T extends SelectViewItem> {
-    public static final int TYPE_LINEAR = 0;
+    public static final int TYPE_TITLE = 0;
     public static final int TYPE_GRID = 1;
 
     private int viewType;
@@ -43,7 +43,7 @@ public class SelectViewData<T extends SelectViewItem> {
     }
 
     public SelectViewData(String title) {
-        this.viewType = TYPE_LINEAR;
+        this.viewType = TYPE_TITLE;
         this.title = title;
     }
 
@@ -54,11 +54,11 @@ public class SelectViewData<T extends SelectViewItem> {
         this.tag = tag;
     }
 
-    public List<T> getData() {
+    List<T> getData() {
         return data;
     }
 
-    public int getViewType() {
+    int getViewType() {
         return viewType;
     }
 }

@@ -111,12 +111,12 @@ public class SelectView extends FrameLayout {
         List<SelectViewItem> items = new ArrayList<>();
         for (SelectViewData selectViewData : list) {
             int viewType = selectViewData.getViewType();
-            if (viewType == SelectViewData.TYPE_LINEAR) {
+            if (viewType == SelectViewData.TYPE_TITLE) {
                 String title = selectViewData.getTitle();
                 if (TextUtils.isEmpty(title)) {
                     title = "";
                 }
-                SelectViewItem selectViewItem = new SelectViewItem(SelectViewData.TYPE_LINEAR, title);
+                SelectViewItem selectViewItem = new SelectViewItem(SelectViewData.TYPE_TITLE, title);
                 items.add(selectViewItem);
             } else {
                 List<SelectViewItem> data = (List<SelectViewItem>) selectViewData.getData();
@@ -155,7 +155,7 @@ public class SelectView extends FrameLayout {
                 }
                 SelectViewItem selectViewItem = list.get(position);
                 int viewType = selectViewItem.getSelectViewType();
-                if (viewType == SelectViewData.TYPE_LINEAR) {
+                if (viewType == SelectViewData.TYPE_TITLE) {
                     return getSelectConfig().columnCount();
                 } else {
                     return 1;

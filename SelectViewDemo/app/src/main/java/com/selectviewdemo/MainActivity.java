@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         mSelectView.setOnItemClickListener(new SelectViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(SelectViewItem item) {
-                long id = item.getId();
+
             }
         });
 
@@ -81,12 +81,12 @@ public class MainActivity extends AppCompatActivity {
         SelectViewData selectViewData3 = new SelectViewData<SelectViewItem>("第四题");
         SelectViewData selectViewData4 = new SelectViewData<SelectViewItem>("第五题");
         SelectViewData selectViewData5 = new SelectViewData<SelectViewItem>("第六题");
-        SelectViewItem selectViewItem = new SelectViewItem(1,"a");
-        SelectViewItem selectViewItem1 = new SelectViewItem(2,"b");
-        SelectViewItem selectViewItem2 = new SelectViewItem(3,"c");
-        SelectViewItem selectViewItem3 = new SelectViewItem(4,"d");
-        SelectViewItem selectViewItem4 = new SelectViewItem(5,"e");
-        SelectViewItem selectViewItem5 = new SelectViewItem(6,"f");
+        SelectViewItem selectViewItem = new SelectViewItem("a");
+        SelectViewItem selectViewItem1 = new SelectViewItem("b");
+        SelectViewItem selectViewItem2 = new SelectViewItem("c");
+        SelectViewItem selectViewItem3 = new SelectViewItem("d");
+        SelectViewItem selectViewItem4 = new SelectViewItem("e");
+        SelectViewItem selectViewItem5 = new SelectViewItem("f");
         List<SelectViewItem> items = new ArrayList<>();
         items.add(selectViewItem);
         items.add(selectViewItem1);

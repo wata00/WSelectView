@@ -10,10 +10,6 @@ import java.io.Serializable;
  */
 public class SelectViewItem implements Serializable {
     /**
-     * 唯一标识id
-     */
-    private long id;
-    /**
      * 是否选中状态 true:选中 false:未选中
      */
     private boolean isSelectViewCheck;
@@ -38,9 +34,8 @@ public class SelectViewItem implements Serializable {
 
     }
 
-    public SelectViewItem(long id, String selectViewTitle) {
+    public SelectViewItem(String selectViewTitle){
         this.selectViewTitle = selectViewTitle;
-        this.id = id;
     }
 
     SelectViewItem(int selectViewType, String selectViewTitle) {
@@ -86,28 +81,5 @@ public class SelectViewItem implements Serializable {
 
     public void setSelectViewSingle(boolean selectViewSingle) {
         isSelectViewSingle = selectViewSingle;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        SelectViewItem other = (SelectViewItem) obj;
-        return this.id == other.id;
     }
 }

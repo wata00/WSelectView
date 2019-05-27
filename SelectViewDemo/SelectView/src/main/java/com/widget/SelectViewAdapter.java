@@ -44,7 +44,7 @@ public class SelectViewAdapter extends RecyclerView.Adapter {
                         parent,
                         false);
                 return new GridHolder(view);
-            case SelectViewData.TYPE_LINEAR:
+            case SelectViewData.TYPE_TITLE:
             default:
                 view = LayoutInflater.from(parent.getContext()).inflate(mConfig.titleStyle(), parent,
                         false);
