@@ -54,11 +54,11 @@ public class SelectViewData<T extends SelectViewItem> {
         this.tag = tag;
     }
 
-    List<T> getData() {
+    public List<T> getData() {
         return data;
     }
 
-    int getViewType() {
+    public int getViewType() {
         return viewType;
     }
 }
