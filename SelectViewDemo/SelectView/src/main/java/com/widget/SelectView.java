@@ -94,11 +94,16 @@ public class SelectView extends FrameLayout {
         isSetData = true;
         mFirstList.clear();
         mList.clear();
+        mRecordList.clear();
         List<SelectViewItem> items = formatList(list);
         mFirstList.addAll(items);
         try {
             List<SelectViewItem> items1 = Utils.deepCopy(items);
             mList.addAll(items1);
+            if (getSelectConfig().isRecordSelect()) {
+                List<SelectViewItem> items2 = Utils.deepCopy(items);
+                mRecordList.addAll(items2);
+            }
             initRecyclerView();
             mAdapter.setData(mList);
         } catch (Exception e) {

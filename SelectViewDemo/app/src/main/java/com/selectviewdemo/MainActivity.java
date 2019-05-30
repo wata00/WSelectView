@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         List<SelectViewItem> items = new ArrayList<>();
         items.add(selectViewItem);
         items.add(selectViewItem1);
-        SelectViewData selectViewData6 = new SelectViewData<>(items, true, 1);
+        SelectViewData selectViewData6 = new SelectViewData<>(items, false, 1);
         List<SelectViewItem> items1 = new ArrayList<>();
         items1.add(selectViewItem2);
         items1.add(selectViewItem3);
