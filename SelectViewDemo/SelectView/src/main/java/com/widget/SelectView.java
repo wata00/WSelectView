@@ -221,6 +221,7 @@ public class SelectView extends FrameLayout {
         }
         mList.clear();
         if (mRecordList == null || mRecordList.size() == 0) {
+            mAdapter.setData(mList);
             return;
         }
         try {
