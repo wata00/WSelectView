@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.widget.SelectView;
 import com.widget.SelectViewAdapter;
+import com.widget.SelectViewConfigImpl;
 import com.widget.SelectViewData;
 import com.widget.SelectViewItem;
 
@@ -25,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mSelectView = findViewById(R.id.select_view);
         mockData();
+        mSelectView.setSelectConfig(new SelectViewConfigImpl(){
+            @Override
+            public boolean isRecordSelect() {
+                return true;
+            }
+        });
         mSelectView.setData(mList);
         mSelectView.setDataDelegation(new SelectViewAdapter.DataDelegation() {
             @Override
@@ -69,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.reset).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSelectView.reset();
+                mSelectView.recoverSelect();
             }
         });
     }

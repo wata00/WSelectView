@@ -38,4 +38,11 @@ public interface SelectViewConfig {
      * @return
      */
     boolean isAllSingle();
+
+    /**
+     * 是否记录筛选
+     *
+     * @return
+     */
+    boolean isRecordSelect();
 }

@@ -28,4 +28,9 @@ public class SelectViewConfigImpl implements SelectViewConfig {
     public boolean isAllSingle() {
         return false;
     }
+
+    @Override
+    public boolean isRecordSelect() {
+        return false;
+    }
 }

@@ -36,6 +36,10 @@ public class SelectView extends FrameLayout {
      * 操作的数据
      */
     private List<SelectViewItem> mList = new ArrayList<>();
+    /**
+     * 筛选之后保存的数据
+     */
+    private List<SelectViewItem> mRecordList = new ArrayList<>();
 
     public SelectView(@NonNull Context context) {
         this(context, null);
@@ -194,7 +198,38 @@ public class SelectView extends FrameLayout {
         if (!isSetData) {
             throw new RuntimeException("u should setData first");
         }
+        if (getSelectConfig().isRecordSelect()) {
+            List<SelectViewItem> list = mAdapter.getList();
+            List<SelectViewItem> items2;
+            try {
+                items2 = Utils.deepCopy(list);
+                mRecordList.clear();
+                mRecordList.addAll(items2);
+            } catch (Exception ignored) {
+
+            }
+        }
         return mAdapter.getSelectList();
+    }
+
+    /**
+     * 恢复筛选数据
+     */
+    public void recoverSelect() {
+        if (!isSetData) {
+            throw new RuntimeException("u should setData first");
+        }
+        mList.clear();
+        if (mRecordList == null || mRecordList.size() == 0) {
+            return;
+        }
+        try {
+            List<SelectViewItem> items1 = Utils.deepCopy(mRecordList);
+            mList.addAll(items1);
+            mAdapter.setData(mList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
