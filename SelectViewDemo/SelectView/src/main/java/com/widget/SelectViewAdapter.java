@@ -139,7 +139,7 @@ public class SelectViewAdapter extends RecyclerView.Adapter {
      */
     private void formatData(SelectViewItem item) {
         boolean allSingle = mConfig.isAllSingle();
-        if (allSingle){
+        if (allSingle) {
             for (int i = 0; i < mList.size(); i++) {
                 SelectViewItem selectViewItem = mList.get(i);
                 if (selectViewItem.equals(item)) {
@@ -154,17 +154,28 @@ public class SelectViewAdapter extends RecyclerView.Adapter {
         }
         boolean selectViewSingle = item.isSelectViewSingle();
         int selectViewTag = item.getSelectViewTag();
+        boolean selectViewCheck1 = item.isSelectViewCheck();
         if (selectViewSingle) {
-            for (int i = 0; i < mList.size(); i++) {
-                SelectViewItem selectViewItem = mList.get(i);
-                int selectViewTag1 = selectViewItem.getSelectViewTag();
-                if (selectViewTag1 == selectViewTag) {
+            if (selectViewCheck1) {
+                for (int i = 0; i < mList.size(); i++) {
+                    SelectViewItem selectViewItem = mList.get(i);
                     if (selectViewItem.equals(item)) {
-                        selectViewItem.setSelectViewCheck(true);
-                        mList.set(i, selectViewItem);
-                    } else {
                         selectViewItem.setSelectViewCheck(false);
                         mList.set(i, selectViewItem);
+                    }
+                }
+            } else {
+                for (int i = 0; i < mList.size(); i++) {
+                    SelectViewItem selectViewItem = mList.get(i);
+                    int selectViewTag1 = selectViewItem.getSelectViewTag();
+                    if (selectViewTag1 == selectViewTag) {
+                        if (selectViewItem.equals(item)) {
+                            selectViewItem.setSelectViewCheck(true);
+                            mList.set(i, selectViewItem);
+                        } else {
+                            selectViewItem.setSelectViewCheck(false);
+                            mList.set(i, selectViewItem);
+                        }
                     }
                 }
             }
