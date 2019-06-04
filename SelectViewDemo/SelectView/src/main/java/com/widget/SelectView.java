@@ -89,7 +89,7 @@ public class SelectView extends FrameLayout {
      */
     public void setData(@NonNull List<SelectViewData> list) {
         if (list.size() == 0) {
-            throw new RuntimeException("do not set 0");
+            return;
         }
         isSetData = true;
         mFirstList.clear();
@@ -179,7 +179,7 @@ public class SelectView extends FrameLayout {
      */
     public void reset() {
         if (!isSetData) {
-            throw new RuntimeException("u should setData first");
+            return;
         }
         mList.clear();
         if (mFirstList == null || mFirstList.size() == 0) {
@@ -201,7 +201,7 @@ public class SelectView extends FrameLayout {
      */
     public List<SelectViewItem> getSelectList() {
         if (!isSetData) {
-            throw new RuntimeException("u should setData first");
+            return new ArrayList();
         }
         if (getSelectConfig().isRecordSelect()) {
             List<SelectViewItem> list = mAdapter.getList();
@@ -222,7 +222,7 @@ public class SelectView extends FrameLayout {
      */
     public void recoverSelect() {
         if (!isSetData) {
-            throw new RuntimeException("u should setData first");
+            return;
         }
         mList.clear();
         if (mRecordList == null || mRecordList.size() == 0) {
