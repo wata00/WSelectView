@@ -132,12 +132,29 @@ public class SelectViewAdapter extends RecyclerView.Adapter {
         }
     }
 
+    private void formatData(SelectViewItem item) {
+        formatData(item, false);
+    }
+
     /**
      * 刷新数据
      *
      * @param item 点击item
      */
-    void formatData(SelectViewItem item) {
+    void formatData(SelectViewItem item, boolean notify) {
+        if (notify) {
+            for (int i = 0; i < mList.size(); i++) {
+                SelectViewItem selectViewItem = mList.get(i);
+                if (selectViewItem.equals(item)) {
+                    selectViewItem.setSelectViewCheck(true);
+                    mList.set(i, selectViewItem);
+                } else {
+                    selectViewItem.setSelectViewCheck(false);
+                    mList.set(i, selectViewItem);
+                }
+            }
+            return;
+        }
         boolean allSingle = mConfig.isAllSingle();
         if (allSingle) {
             for (int i = 0; i < mList.size(); i++) {
@@ -156,7 +173,15 @@ public class SelectViewAdapter extends RecyclerView.Adapter {
         int selectViewTag = item.getSelectViewTag();
         boolean selectViewCheck1 = item.isSelectViewCheck();
         if (selectViewSingle) {
-            if (!selectViewCheck1) {
+            if (selectViewCheck1) {
+                for (int i = 0; i < mList.size(); i++) {
+                    SelectViewItem selectViewItem = mList.get(i);
+                    if (selectViewItem.equals(item)) {
+                        selectViewItem.setSelectViewCheck(false);
+                        mList.set(i, selectViewItem);
+                    }
+                }
+            } else {
                 for (int i = 0; i < mList.size(); i++) {
                     SelectViewItem selectViewItem = mList.get(i);
                     int selectViewTag1 = selectViewItem.getSelectViewTag();

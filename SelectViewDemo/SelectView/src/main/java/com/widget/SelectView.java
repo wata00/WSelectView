@@ -275,7 +275,7 @@ public class SelectView extends FrameLayout {
      */
     public void setNotify(SelectViewItem item) {
         if (item != null) {
-            mAdapter.formatData(item);
+            mAdapter.formatData(item, true);
             mAdapter.notifyDataSetChanged();
         }
     }
