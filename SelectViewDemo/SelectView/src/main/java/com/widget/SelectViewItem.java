@@ -34,7 +34,7 @@ public class SelectViewItem implements Serializable {
 
     }
 
-    public SelectViewItem(String selectViewTitle){
+    public SelectViewItem(String selectViewTitle) {
         this.selectViewTitle = selectViewTitle;
     }
 
@@ -81,5 +81,11 @@ public class SelectViewItem implements Serializable {
 
     public void setSelectViewSingle(boolean selectViewSingle) {
         isSelectViewSingle = selectViewSingle;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        SelectViewItem obj1 = (SelectViewItem) obj;
+        return obj1.selectViewTitle.equals(this.selectViewTitle);
     }
 }

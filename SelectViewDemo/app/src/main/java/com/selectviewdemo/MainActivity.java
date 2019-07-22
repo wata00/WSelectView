@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.select).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<SelectViewItem> selectList = mSelectView.getSelectList();
-//                SelectViewItem selectViewItem = selectList.get(0);
+                SelectViewItem selectViewItem5 = new SelectViewItem("a");
+                mSelectView.setNotify(selectViewItem5);
             }
         });
         findViewById(R.id.reset).setOnClickListener(new View.OnClickListener() {

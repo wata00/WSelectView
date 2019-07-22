@@ -267,4 +267,16 @@ public class SelectView extends FrameLayout {
         }
         return mConfig;
     }
+
+    /**
+     * 手动刷新数据
+     *
+     * @param item SelectViewItem
+     */
+    public void setNotify(SelectViewItem item) {
+        if (item != null) {
+            mAdapter.formatData(item);
+            mAdapter.notifyDataSetChanged();
+        }
+    }
 }
