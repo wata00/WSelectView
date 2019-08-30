@@ -1,5 +1,7 @@
 package com.widget;
 
+import android.text.TextUtils;
+
 import java.io.Serializable;
 
 /**
@@ -85,7 +87,13 @@ public class SelectViewItem implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
         SelectViewItem obj1 = (SelectViewItem) obj;
+        if(TextUtils.isEmpty(obj1.selectViewTitle)){
+            return false;
+        }
         return obj1.selectViewTitle.equals(this.selectViewTitle);
     }
 }
